@@ -2,7 +2,7 @@
 import os.path
 from setuptools import setup
 
-version = "0.1.0"
+version = "0.1.1"
 with open("./python/astro_metadata_translator/version.py", "w") as f:
     print(f"""
 __all__ = ("__version__", )
