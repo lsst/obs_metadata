@@ -668,7 +668,7 @@ class MetadataTranslator:
         is_defined : `bool`
             `True` if the header is present and not-`None`. `False` otherwise.
         """
-        if keyword not in header:
+        if keyword is None or keyword not in header:
             return False
 
         if header[keyword] is None:

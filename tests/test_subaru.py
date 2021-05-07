@@ -78,7 +78,7 @@ class HscTestCase(unittest.TestCase, MetadataAssertHelper):
                      )
         for file, expected in test_data:
             with self.subTest(f"Testing {file}"):
-                self.assertObservationInfoFromYaml(file, dir=self.datadir, **expected)
+                self.assertObservationInfoIsConsistent(file, dir=self.datadir, **expected)
 
     def test_suprimecam_translator(self):
         # In this case the airmass is average during observation
@@ -112,7 +112,7 @@ class HscTestCase(unittest.TestCase, MetadataAssertHelper):
                      )
         for file, expected in test_data:
             with self.subTest(f"Testing {file}"):
-                self.assertObservationInfoFromYaml(file, dir=self.datadir, **expected)
+                self.assertObservationInfoIsConsistent(file, dir=self.datadir, **expected)
 
     def test_merging_hsc(self):
         files = ("fitsheader-hsc-HSCA04090107.yaml", "fitsheader-hsc.yaml")

@@ -135,8 +135,8 @@ class DecamTestCase(unittest.TestCase, MetadataAssertHelper):
                            wcs_params=dict(max_sep=5.0))),
                      )
         for file, expected in test_data:
-            with self.subTest(f"Testing {file}"):
-                self.assertObservationInfoFromYaml(file, dir=self.datadir, **expected)
+            with self.subTest(f"Testing {file} from dict-like"):
+                self.assertObservationInfoIsConsistent(file, dir=self.datadir, **expected)
 
 
 if __name__ == "__main__":
